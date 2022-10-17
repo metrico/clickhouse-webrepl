@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ClickHouse REPL",
+  "name": "Read Eval Print Loop for Clickhouse APIs",
   "icons": [
     {
       "src": "favicon.ico",
