@@ -1,6 +1,6 @@
 import { ReactReplView } from 'awesome-react-repl';
 import { useRef, useState } from 'react';
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL || window.location.href;
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL || window.location.origin;
 
 const query = (input: string) => {
     const URL = REACT_APP_API_URL+'/?query='+input;
@@ -8,10 +8,6 @@ const query = (input: string) => {
     request.open('GET', URL, false);  // `false` makes the request synchronous
     request.setRequestHeader("custom-header", "test")
     request.send(null);
-    if (request.status !== 200) {
-      // handle an error here
-      return
-    }
     return request.responseText;
 }
 
@@ -20,6 +16,7 @@ function App() {
 
   function handleSubmit(input: string) {
     setLines(lines => lines.concat({ type: 'input', value: input }));
+    if (!input || input === "") return;
     try {
       const output = query(input);
       setLines(lines => lines.concat({ type: 'output', value: output }));
@@ -30,7 +27,7 @@ function App() {
 
   return (
     <ReactReplView
-      title="ClickHouse"
+      title="ClickHouse CLI"
       lines={lines}
       onSubmit={handleSubmit}
       height={window.innerHeight}
