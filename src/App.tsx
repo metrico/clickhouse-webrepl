@@ -30,7 +30,7 @@ function App() {
 
   return (
     <ReactReplView
-      title="Ratlab"
+      title="ClickHouse"
       lines={lines}
       onSubmit={handleSubmit}
       height={window.innerHeight}
