@@ -1,4 +1,5 @@
 # ClickHouse Web REPL
+[![Node.js CI](https://github.com/lmangani/clickhouse-webrepl/actions/workflows/build.yml/badge.svg)](https://github.com/lmangani/clickhouse-webrepl/actions/workflows/build.yml)
 
 Designed for embedded usage. Insecure. Don't do this at home.
 
