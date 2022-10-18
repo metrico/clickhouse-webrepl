@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     strategy:
       matrix:
         node-version: [16.x]
@@ -31,6 +33,7 @@ jobs:
         directory: build
         filename: 'latest.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+        
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
