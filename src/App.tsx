@@ -3,7 +3,13 @@ import { useRef, useState } from 'react';
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || window.location.origin;
 
 const query = (input: string) => {
-    const URL = REACT_APP_API_URL+'/?query='+input;
+    var URL = REACT_APP_API_URL+'/?';
+    /// CORS + Safety Limits
+    URL += 'add_http_cors_header=1' +
+    '&default_format=JSONCompact' +
+    '&max_result_rows=1000&max_result_bytes=10000000&result_overflow_mode=break';
+    URL += '&query='+input;
+    
     const request = new XMLHttpRequest();
     request.open('GET', URL, false);  // `false` makes the request synchronous
     request.setRequestHeader("custom-header", "test")
