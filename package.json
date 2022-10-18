@@ -16,7 +16,7 @@
     "@types/styled-components": "^5.1.24",
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "awesome-react-repl": "^1.0.3",
-    "babel-jest": "^27.4.2",
+    "babel-jest": "^29.2.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-preset-react-app": "^10.0.1",
