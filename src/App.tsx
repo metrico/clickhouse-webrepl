@@ -1,5 +1,5 @@
 import { ReactReplView } from 'awesome-react-repl';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL || window.location.origin;
 
 const query = (input: string) => {
